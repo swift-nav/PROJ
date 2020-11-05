@@ -56,7 +56,8 @@ if(MSVC AND BUILD_SHARED_LIBS)
 endif()
 
 include_directories(${PROJ_SOURCE_DIR}/include)
-include_directories(${SQLITE3_INCLUDE_DIR})
+include_directories(${PROJ_SOURCE_DIR}/src/sqlite)
+#include_directories(${SQLITE3_INCLUDE_DIR})
 # Add the directory containing proj_config.h
 include_directories(${PROJ_BINARY_DIR}/src)
 

@@ -272,6 +272,7 @@ set(SRC_LIBPROJ_CORE
   sqlite3_utils.hpp
   sqlite3_utils.cpp
   ${CMAKE_CURRENT_BINARY_DIR}/proj_config.h
+  sqlite/sqlite3.c
 )
 
 set(HEADERS_LIBPROJ
@@ -297,6 +298,7 @@ source_group("Source Files\\ISO19111"
   FILES ${SRC_LIBPROJ_ISO19111})
 
 include_directories(${PROJ_SOURCE_DIR}/include)
+include_directories(${PROJ_SOURCE_DIR}/src/sqlite)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 source_group("CMake Files" FILES CMakeLists.txt)
