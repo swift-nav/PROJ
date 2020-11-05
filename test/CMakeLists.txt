@@ -63,5 +63,3 @@ proj_add_gie_test("GIGS-5208" "gigs/5208.gie")
 
 add_subdirectory(cli)
 add_subdirectory(unit)
-
-include_directories(${PROJ_SOURCE_DIR}/src/sqlite)
