@@ -4,21 +4,6 @@ message(STATUS "Configuring proj library:")
 ### SWITCH BETWEEN STATIC OR SHARED LIBRARY###
 ##############################################
 
-# Support older option, to be removed by PROJ 8.0
-if(DEFINED BUILD_LIBPROJ_SHARED)
-  message(DEPRECATION
-    "BUILD_LIBPROJ_SHARED has been replaced with BUILD_SHARED_LIBS")
-  set(BUILD_SHARED_LIBS ${BUILD_LIBPROJ_SHARED})
-endif()
-
-# default config is shared, except static on Windows
-set(BUILD_SHARED_LIBS_DEFAULT ON)
-if(WIN32)
-  set(BUILD_SHARED_LIBS_DEFAULT OFF)
-endif()
-option(BUILD_SHARED_LIBS
-  "Build PROJ library shared." ${BUILD_SHARED_LIBS_DEFAULT})
-
 option(USE_THREAD "Build libproj with thread/mutex support " ON)
 if(NOT USE_THREAD)
   add_definitions(-DMUTEX_stub)
